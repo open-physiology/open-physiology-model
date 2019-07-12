@@ -1,0 +1,41 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+
+  "plugins": [
+    {
+      "name": "esdoc-babel-7-plugin",
+      "option": {
+        "plugins": [
+          "angular2-annotations",
+          ["@babel/plugin-proposal-decorators", { "legacy": true }],
+          ["@babel/plugin-proposal-class-properties", { "loose": true }],
+          "@babel/plugin-proposal-function-bind",
+          "@babel/plugin-transform-flow-strip-types"
+        ]
+      }
+    },
+    {
+      "name": "esdoc-standard-plugin",
+       "option": {
+         "brand": {
+           "title": "ApiNATOMY Model Generator",
+           "description": "Model generation for ApiNATOMY framework",
+           "repository": "https://github.com/open-physiology/open-physiology-model",
+           "site": "http://open-physiology.org",
+           "author": "http://www.nkokash.com/"
+         },
+         "manual": {
+           "index": "./manual/index.md",
+           "globalIndex": true,
+           "asset": "./manual/asset",
+           "files": [
+           ]
+         }
+       }
+     },
+     {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}}
+  ]
+
+}
+
