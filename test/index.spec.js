@@ -8,7 +8,7 @@ import {
 
 import basicModel from './data/basic.json';
 import { modelClasses } from '../src/index.js';
-
+//import { modelClasses } from '../src/model/modelClasses';
 
 /** @test */
 describe("Instantiates model", () => {
@@ -16,13 +16,10 @@ describe("Instantiates model", () => {
     basicModel.nodes.push({"id": 200});
     basicModel.links.push({"id": 300, "source": 100, "target": 200});
 
-    //console.log("INPUT:", basicModel);
     let graphData = modelClasses.Graph.fromJSON(basicModel, modelClasses);
 
-    console.log(graphData.logger.entries);
-
     beforeEach(() => {});
-	
+
 	it("All input objects are mapped to model resources", () => {
 		expect(graphData).has.property("resources");
 		expect(graphData.resources).to.have.length.above(0);

@@ -48,7 +48,7 @@ export class Resource{
         const res = new cls(json.id);
         res.class = clsName;
         //spec
-        let difference = json::keys().filter(x => !this.Model.fieldNames.find(y => y === x));
+        let difference = json::keys().filter(x => !cls.Model.fieldNames.find(y => y === x));
         if (difference.length > 0) {
             logger.warn(`Unknown parameter(s) in class ${this.name} may be ignored: `, difference.join(","));
         }
@@ -430,7 +430,7 @@ export class Resource{
      * Checks if the current resource carries a material.
      * The method makes more sense for lyphs, but it is useful to be able to test any resource, this simplifies filtering
      * @param materialID
-     * @returns {*|void|T}
+     * @returns {*|void}
      */
     containsMaterial(materialID){
         let res = (this.materials||[]).find(e => e.id === materialID);

@@ -33,6 +33,7 @@ export {
     Lyph,
     Border,
     modelClasses,
-    getClassName, schemaClassModels
+    getClassName,
+    schemaClassModels
 };
 
