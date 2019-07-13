@@ -3,7 +3,7 @@ import {clone, merge, pick, isPlainObject} from 'lodash-bound';
 import {logger} from './logger';
 import {findResourceByID, getNewID} from './utils';
 
-export const LYPH_TOPOLOGY = {
+const LYPH_TOPOLOGY = {
     TUBE : "TUBE",
     BAG  : "BAG",
     BAG2 : "BAG2",
@@ -21,6 +21,8 @@ export const LYPH_TOPOLOGY = {
  * @property hostedLyphs
  */
 export class Shape extends VisualResource {
+
+    static LYPH_TOPOLOGY = LYPH_TOPOLOGY;
 
     /**
      * Create a Shape resource from its JSON specification together with resources to model shape borders.
