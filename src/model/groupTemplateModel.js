@@ -1,7 +1,7 @@
 import {Resource} from './resourceModel';
 import {LYPH_TOPOLOGY, Lyph} from "./shapeModel";
 import {PROCESS_TYPE, Link, Node} from "./visualResourceModel";
-import {COALESCENCE_TOPOLOGY} from "./coalescenceModel";
+import {Coalescence} from "./coalescenceModel";
 import {mergeGenResource, mergeGenResources, findResourceByID} from "./utils";
 import {logger} from './logger';
 import {defaults, isPlainObject, isArray, flatten} from "lodash-bound";
@@ -346,7 +346,7 @@ export class Tree extends GroupTemplate {
                 "id"       : `${lyph.id}_tree-${level.conveyingLyph}`,
                 "name"     : `${lyph.name} tree #${level.conveyingLyph}`,
                 "generated": true,
-                "topology" : COALESCENCE_TOPOLOGY.EMBEDDING,
+                "topology" : Coalescence.COALESCENCE_TOPOLOGY.EMBEDDING,
                 "lyphs"    : [lyph.id, level.conveyingLyph]
             };
 
@@ -643,7 +643,7 @@ export class Channel extends Resource {
                     "id"       : `${layer.id}_channel-${instance.lyphs[i]}`,
                     "name"     : `${layer.name} channel #${instance.lyphs[i]}`,
                     "generated": true,
-                    "topology" : COALESCENCE_TOPOLOGY.EMBEDDING,
+                    "topology" : Coalescence.COALESCENCE_TOPOLOGY.EMBEDDING,
                     "lyphs"    : [layer.id, instance.lyphs[i]]
                 };
 

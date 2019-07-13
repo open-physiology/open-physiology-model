@@ -1,13 +1,20 @@
 import {Graph, schema} from './model/graphModel';
 import {External, Resource} from "./model/resourceModel";
-import {Link, Material, Node, VisualResource} from "./model/visualResourceModel";
+import {
+    Link,
+    Material,
+    Node,
+    VisualResource
+} from "./model/visualResourceModel";
 import {Chain, Channel, GroupTemplate, Tree} from "./model/groupTemplateModel";
 import {Border, Lyph, Region, Shape} from "./model/shapeModel";
 import {Coalescence} from "./model/coalescenceModel";
 import {Group} from "./model/groupModel";
 import {modelClasses} from "./model/modelClasses";
+import {getClassName, schemaClassModels} from "./model/utils";
 
 module.export = {
+    schema,
     Resource,
     VisualResource,
     GroupTemplate,
@@ -26,6 +33,6 @@ module.export = {
     Lyph,
     Border,
     modelClasses,
-    schema
+    getClassName, schemaClassModels
 };
 

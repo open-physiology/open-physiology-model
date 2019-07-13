@@ -2,7 +2,7 @@ import { Resource } from './resourceModel';
 import {logger} from "./logger";
 import { keys, values, uniqBy } from 'lodash-bound';
 
-export const COALESCENCE_TOPOLOGY = {
+const COALESCENCE_TOPOLOGY = {
     EMBEDDING  : "EMBEDDING",
     CONNECTING : "CONNECTING"
 };
@@ -14,6 +14,8 @@ export const COALESCENCE_TOPOLOGY = {
  * @property generatedFrom
  */
 export class Coalescence extends Resource{
+
+    static COALESCENCE_TOPOLOGY = COALESCENCE_TOPOLOGY;
 
     /**
      * Replicates coalescences defined on abstract lyphs to their subtypes

@@ -1,6 +1,6 @@
 import { Resource } from './resourceModel';
 import {isObject, unionBy, merge, keys, cloneDeep, entries, isArray, pick, defaults, sortBy} from 'lodash-bound';
-import {LINK_STROKE, PROCESS_TYPE, Node} from './visualResourceModel';
+import {Link, Node} from './visualResourceModel';
 import {Lyph} from "./shapeModel";
 import {addColor} from './utils';
 import {logger} from './logger';
@@ -269,7 +269,7 @@ export class Group extends Resource {
                         "id"         : `${prev}_${nodeClone.id}`,
                         "source"     : `${prev}`,
                         "target"     : `${nodeClone.id}`,
-                        "stroke"     : LINK_STROKE.DASHED,
+                        "stroke"     : Link.LINK_STROKE.DASHED,
                         "length"     : 1,
                         "strength"   : 1,
                         "collapsible": true,
@@ -323,7 +323,7 @@ export class Group extends Resource {
             if (lnk.conveyingLyph){
                 let layers = lnk.conveyingLyph.layers || [lnk.conveyingLyph];
                 if (layers[0] && layers[0].materials){
-                    if (lnk.conveyingType === PROCESS_TYPE.ADVECTIVE){
+                    if (lnk.conveyingType === Link.PROCESS_TYPE.ADVECTIVE){
                         if (!lnk.conveyingMaterials || lnk.conveyingMaterials.length === 0){
                             lnk.conveyingMaterials = layers[0].materials;
                         } else {

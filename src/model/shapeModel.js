@@ -1,4 +1,4 @@
-import {LINK_GEOMETRY, Node, VisualResource} from './visualResourceModel';
+import {Link, VisualResource} from './visualResourceModel';
 import {clone, merge, pick, isPlainObject} from 'lodash-bound';
 import {logger} from './logger';
 import {findResourceByID, getNewID} from './utils';
@@ -40,7 +40,7 @@ export class Shape extends VisualResource {
                 "id": id,
                 "source": { id: `s_${id}` },
                 "target": { id: `t_${id}` },
-                "geometry": LINK_GEOMETRY.INVISIBLE
+                "geometry": Link.LINK_GEOMETRY.INVISIBLE
             });
         }
         delete json.numBorders;
