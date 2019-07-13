@@ -1,6 +1,4 @@
 const loaders = require('./webpack.loaders.js');
-const plugins = require('./webpack.plugins.js');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',

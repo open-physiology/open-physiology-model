@@ -13,7 +13,7 @@ import {Group} from "./model/groupModel";
 import {modelClasses} from "./model/modelClasses";
 import {getClassName, schemaClassModels} from "./model/utils";
 
-module.export = {
+export {
     schema,
     Resource,
     VisualResource,

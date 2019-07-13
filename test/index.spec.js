@@ -7,7 +7,8 @@ import {
 } from './test.helper';
 
 import basicModel from './data/basic.json';
-import { modelClasses } from '../src/model/modelClasses';
+import { modelClasses } from '../src/index.js';
+
 
 /** @test */
 describe("Instantiates model", () => {
