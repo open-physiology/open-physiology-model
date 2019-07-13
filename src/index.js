@@ -1,4 +1,4 @@
-import {Graph} from './model/graphModel';
+import {Graph, schema} from './model/graphModel';
 import {External, Resource} from "./model/resourceModel";
 import {Link, Material, Node, VisualResource} from "./model/visualResourceModel";
 import {Chain, Channel, GroupTemplate, Tree} from "./model/groupTemplateModel";
@@ -25,6 +25,7 @@ module.export = {
     Region,
     Lyph,
     Border,
-    modelClasses
+    modelClasses,
+    schema
 };
 
