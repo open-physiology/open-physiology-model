@@ -4,10 +4,6 @@
 ### mac ##
 .DS_Store
 
-## dist folder
-dist
-
-
 ### Node ###
 # Logs
 logs
