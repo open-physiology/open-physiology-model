@@ -1,7 +1,8 @@
 const loaders = require('./webpack.loaders.js');
+const plugins = require('./webpack.plugins.js');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
 	context: __dirname + '/src',
     devtool: 'source-map',
     entry: {
@@ -11,11 +12,12 @@ module.exports = {
 	output: {
 		path: __dirname + '/dist',
 		filename: '[name].js',
-		sourceMapFilename: '[file].map',
-		devtoolModuleFilenameTemplate:         '[absolute-resource-path]',
-		devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
+        library: 'OpenPhysiologyModel',
+        libraryTarget: 'umd',
+        sourceMapFilename: '[file].map'
 	},
 	module: {
 		rules: loaders
-	}
+	},
+    plugins: plugins
 };
